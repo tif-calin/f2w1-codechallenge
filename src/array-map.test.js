@@ -1,4 +1,4 @@
-import { doubleNumbers, stringItUp } from './array-map';
+import { doubleNumbers, stringItUp, capitalizeNames, namesOnly, makeStrings, readyToPutInTheDOM } from './array-map';
 
 const CELEBS = [
   {
@@ -37,19 +37,19 @@ test('string it up', () => {
 
 test('capitalize names', () => {
   const input = ["john", "JACOB", "jinGleHeimer", "schmidt"]; // arrange
-  const output = doubleNumbers(input); // act
+  const output = capitalizeNames(input); // act
   expect(output).toEqual(["John", "Jacob", "Jingleheimer", "Schmidt"]); // assert
 });
 
 test('names only', () => {
   const input = CELEBS; // arrange
-  const output = doubleNumbers(input); // act
+  const output = namesOnly(input); // act
   expect(output).toEqual(["Angelina Jolie", "Eric Jones", "Paris Hilton", "Kayne West", "Bob Ziroll"]); // assert
 });
 
 test('make strings', () => {
   const input = CELEBS; // arrange
-  const output = doubleNumbers(input); // act
+  const output = makeStrings(input); // act
   expect(output).toEqual([
     "Angelina Jolie can go to The Matrix", 
     "Eric Jones is under age!!", 
@@ -61,7 +61,7 @@ test('make strings', () => {
 
 test('ready to put in the dom', () => {
   const input = CELEBS; // arrange
-  const output = doubleNumbers(input); // act
+  const output = readyToPutInTheDOM(input); // act
   expect(output).toEqual([
     "<h1>Angelina Jolie</h1><h2>80</h2>", 
     "<h1>Eric Jones</h1><h2>2</h2>", 

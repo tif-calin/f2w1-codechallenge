@@ -15,7 +15,7 @@ export function namesOnly(arr) {
 }
 
 export function makeStrings(arr) {
-  return arr.map(obj => `${obj.name} ${obj.age < 50 ? 'is under age!!' : 'can go to the Matrix'}`)
+  return arr.map(obj => `${obj.name} ${obj.age < 18 ? 'is under age!!' : 'can go to The Matrix'}`)
 }
 
 export function readyToPutInTheDOM(arr) {

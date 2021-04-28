@@ -1,5 +1,5 @@
 export function doubleNumbers(arr) {
-    return arr.map(n => n * 2);
+  return arr.map(n => n * 2);
 }
 
 export function stringItUp(arr) {
@@ -15,9 +15,9 @@ export function namesOnly(arr) {
 }
 
 export function makeStrings(arr) {
-  return arr.map(obj => `${obj.name} ${obj.age < 18 ? 'is under age!!' : 'can go to The Matrix'}`)
+  return arr.map(obj => `${obj.name} ${obj.age < 18 ? 'is under age!!' : 'can go to The Matrix'}`);
 }
 
 export function readyToPutInTheDOM(arr) {
-    return arr.map(obj => `<h1>${obj.name}</h1><h2>${obj.age}</h2>`)  
+  return arr.map(obj => `<h1>${obj.name}</h1><h2>${obj.age}</h2>`);
 }

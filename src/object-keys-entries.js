@@ -12,5 +12,5 @@ export function getArrayOfKeysAndValues(obj){
 }
 
 export function sortedArraysByValuesLength(obj) {
-  return Object.entries(obj).filter((a, b) => a[1].length - b[1].length);
+  return Object.entries(obj).sort((a, b) => b[1].length - a[1].length);
 }

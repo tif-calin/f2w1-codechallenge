@@ -42,5 +42,5 @@ export function extractVowels(str){
     else noVwls.push(char);
   });
 
-  return [noVwls.join(''), onlyVwls.join('')];
+  return [noVwls.join(''), onlyVwls.sort().join('')];
 }

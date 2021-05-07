@@ -75,5 +75,5 @@ test('removeVowels', () => {
 
 test('extractVowels', () => {
   expect(extractVowels('gregor')).toStrictEqual(['grgr', 'eo']);
-  expect(extractVowels('The quick brown fox')).toStrictEqual(['Th qck brwn fx', 'euioo']);
+  expect(extractVowels('The quick brown fox')).toStrictEqual(['Th qck brwn fx', 'eioou']);
 });

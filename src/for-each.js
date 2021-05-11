@@ -11,11 +11,15 @@ export function totalSum(matrix) {
 }
 
 export function grandTotal(stores) {
-  const hoursOpen = ['9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.', '8 p.m.'];
-
-
+  const totals = new Array(stores[0].length).fill(0);
+  stores.forEach(store => {
+    store.forEach((hourly, index) => totals[index] += hourly);
+  });
+  return totals;
 }
 
 export function salesData(hours, data) {
-  
+  const storeData = [];
+  hours.forEach((hour, index) => storeData.push({sales: `${data[index]} cookies`, time: hour}));
+  return storeData;
 }

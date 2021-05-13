@@ -33,3 +33,16 @@ export const averageNums = arr => {
 
   return objAcc.sum / objAcc.count;
 };
+
+const isPrime = (value) => {
+  for (let i = 2; i < value; i++) {
+    if (value % i === 0) {
+      return false;
+    }
+  }
+  return value > 1;
+};
+
+export const countPrimeNumbers = arr => {
+  return arr.reduce((acc, val) => ((isPrime(val)) ? ++acc : acc), 0);
+};

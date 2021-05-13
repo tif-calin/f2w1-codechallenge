@@ -1,5 +1,5 @@
 import { test, expect } from '@jest/globals';
-import { addPurchases, addValues, averageNums, countNumberOfChildren, countNumberOfElements, returnNames, reversedString, toLastNames } from './cc12.js';
+import { addPurchases, addValues, averageNums, countNumberOfChildren, countNumberOfElements, countPrimeNumbers, returnNames, reversedString, toLastNames } from './cc12.js';
 
 /*
 Main:
@@ -154,4 +154,11 @@ test('averageNums', () => {
   const expected = 15;
 
   expect(averageNums(input)).toStrictEqual(expected);
+});
+
+test('countPrimeNumbers', () => {
+  const input = [5, 10, 30];
+  const expected = 1;
+
+  expect(countPrimeNumbers(input)).toStrictEqual(expected);
 });

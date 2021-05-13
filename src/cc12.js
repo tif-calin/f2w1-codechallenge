@@ -17,3 +17,7 @@ export const countNumberOfElements = arr => {
 export const returnNames = arr => {
   return arr.reduce((acc, val) => [...acc, val.name], []);
 };
+
+export const reversedString = str => {
+  return str.split('').reduceRight((acc, val) => acc + val, '');
+};

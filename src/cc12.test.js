@@ -1,5 +1,5 @@
 import { test, expect } from '@jest/globals';
-import { addPurchases, addValues, countNumberOfElements, returnNames, toLastNames } from './cc12.js';
+import { addPurchases, addValues, countNumberOfElements, returnNames, reversedString, toLastNames } from './cc12.js';
 
 /*
 Main:
@@ -92,4 +92,11 @@ test('returnNames', () => {
   const expected = ['Luke Skywalker', 'C-3PO', 'R2-D2', 'Darth Vader', 'Leia Organa'];
 
   expect(returnNames(input)).toStrictEqual(expected);
+});
+
+test('reversedString', () => {
+  const input = 'Hello, world!';
+  const expected = '!dlrow ,olleH';
+
+  expect(reversedString(input)).toStrictEqual(expected);
 });

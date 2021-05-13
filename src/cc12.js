@@ -9,3 +9,7 @@ export const addValues = arr => {
 export const addPurchases = arr => {
   return arr.reduce((acc, item) => acc + item.purchasePrice, 0);
 };
+
+export const countNumberOfElements = arr => {
+  return arr.reduce((acc, num) => ++acc, 0);
+};

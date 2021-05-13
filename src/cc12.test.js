@@ -1,5 +1,5 @@
 import { test, expect } from '@jest/globals';
-import { addPurchases, addValues, toLastNames } from './cc12.js';
+import { addPurchases, addValues, countNumberOfElements, toLastNames } from './cc12.js';
 
 /*
 Main:
@@ -30,4 +30,11 @@ test('addPurchases', () => {
   const expected = 65.66;
 
   expect(addPurchases(input)).toStrictEqual(expected);
+});
+
+test('countNumberOfElements', () => {
+  const input = [{ item: 'basketball', purchasePrice: 16.99 }, 23, 'learn spanish', []];
+  const expected = 4;
+
+  expect(countNumberOfElements(input)).toStrictEqual(expected);
 });

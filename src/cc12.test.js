@@ -1,5 +1,5 @@
 import { test, expect } from '@jest/globals';
-import { addPurchases, addValues, averageNums, countNumberOfChildren, countNumberOfElements, countPrimeNumbers, returnNames, reversedString, toLastNames } from './cc12.js';
+import { addPurchases, addValues, averageNums, countNumberOfChildren, countNumberOfElements, countPrimeNumbers, extractState, returnNames, reversedString, toLastNames } from './cc12.js';
 
 /*
 Main:
@@ -161,4 +161,44 @@ test('countPrimeNumbers', () => {
   const expected = 1;
 
   expect(countPrimeNumbers(input)).toStrictEqual(expected);
+});
+
+test('extractState', () => {
+  const data = {
+    stats: [
+      {
+        stat: {
+          url: 'https://pokeapi.co/api/v2/stat/6/',
+          name: 'speed',
+        },
+        effort: 5,
+        baseStat: 30,
+      },
+      {
+        stat: {
+          url: 'https://pokeapi.co/api/v2/stat/5/',
+          name: 'special-defense',
+        },
+        effort: 2,
+        baseStat: 110,
+      },
+      {
+        stat: {
+          url: 'https://pokeapi.co/api/v2/stat/4/',
+          name: 'special-attack',
+        },
+        effort: 9,
+        baseStat: 65,
+      },
+    ],
+    name: 'snorlax',
+    weight: 4600,
+  };
+  const input = 'special-defense';
+  const expected = data.stats[1];
+  const input2 = 'very-special-defense';
+  const expected2 = null;
+
+  expect(extractState(data, input)).toStrictEqual(expected);
+  expect(extractState(data, input2)).toStrictEqual(expected2);
 });

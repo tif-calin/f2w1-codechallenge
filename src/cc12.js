@@ -46,3 +46,8 @@ const isPrime = (value) => {
 export const countPrimeNumbers = arr => {
   return arr.reduce((acc, val) => ((isPrime(val)) ? ++acc : acc), 0);
 };
+
+export const extractState = (obj, str) => {
+  const match = obj.stats.reduce((acc, val) => [...acc, ((val.stat.name === str) ? val : null)], []).filter(val => val);
+  return (match.length) ? match[0] : null;
+};

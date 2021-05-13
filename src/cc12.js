@@ -25,3 +25,11 @@ export const reversedString = str => {
 export const countNumberOfChildren = arr => {
   return arr.reduce((acc, val) => acc + ((val.children) ? val.children.length : 0), 0);
 };
+
+export const averageNums = arr => {
+  const objAcc = arr.reduce((acc, val) => {
+    return { count: ++acc.count, sum: acc.sum + val };
+  }, { count: 0, sum: 0 });
+
+  return objAcc.sum / objAcc.count;
+};

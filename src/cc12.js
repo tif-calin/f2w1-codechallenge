@@ -13,3 +13,7 @@ export const addPurchases = arr => {
 export const countNumberOfElements = arr => {
   return arr.reduce((acc, num) => ++acc, 0);
 };
+
+export const returnNames = arr => {
+  return arr.reduce((acc, val) => [...acc, val.name], []);
+};

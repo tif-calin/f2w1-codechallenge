@@ -51,3 +51,8 @@ export const extractState = (obj, str) => {
   const match = obj.stats.reduce((acc, val) => [...acc, ((val.stat.name === str) ? val : null)], []).filter(val => val);
   return (match.length) ? match[0] : null;
 };
+
+export const extractChildren = arr => {
+  const onlyA = arr.filter(char => char.name.toLowerCase().includes('a'));
+  return onlyA.reduce((acc, val) => (val.children) ? [...acc, ...val.children] : acc, []);
+};

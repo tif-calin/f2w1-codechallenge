@@ -1,5 +1,5 @@
 import { test, expect } from '@jest/globals';
-import { addPurchases, addValues, averageNums, countNumberOfChildren, countNumberOfElements, countPrimeNumbers, extractState, returnNames, reversedString, toLastNames } from './cc12.js';
+import { addPurchases, addValues, averageNums, countNumberOfChildren, countNumberOfElements, countPrimeNumbers, extractChildren, extractState, returnNames, reversedString, toLastNames } from './cc12.js';
 
 /*
 Main:
@@ -101,49 +101,51 @@ test('reversedString', () => {
   expect(reversedString(input)).toStrictEqual(expected);
 });
 
+const dataGameOfThrones = [
+  {
+    name: 'Eddard',
+    spouse: 'Catelyn',
+    children: ['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon'],
+    house: 'Stark',
+  },
+  {
+    name: 'Jon',
+    spouse: 'Lysa',
+    children: ['Robin'],
+    house: 'Arryn',
+  },
+  {
+    name: 'Cersei',
+    spouse: 'Robert',
+    children: ['Joffrey', 'Myrcella', 'Tommen'],
+    house: 'Lannister',
+  },
+  {
+    name: 'Daenarys',
+    spouse: 'Khal Drogo',
+    children: ['Drogon', 'Rhaegal', 'Viserion'],
+    house: 'Targaryen',
+  },
+  {
+    name: 'Mace',
+    spouse: 'Alerie',
+    children: ['Margaery', 'Loras'],
+    house: 'Tyrell',
+  },
+  {
+    name: 'Sansa',
+    spouse: 'Tyrion',
+    house: 'Stark',
+  },
+  {
+    name: 'Jon',
+    spouse: null,
+    house: 'Snow',
+  },
+];
+
 test('countNumberOfChildren', () => {
-  const input = [
-    {
-      name: 'Eddard',
-      spouse: 'Catelyn',
-      children: ['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon'],
-      house: 'Stark',
-    },
-    {
-      name: 'Jon',
-      spouse: 'Lysa',
-      children: ['Robin'],
-      house: 'Arryn',
-    },
-    {
-      name: 'Cersei',
-      spouse: 'Robert',
-      children: ['Joffrey', 'Myrcella', 'Tommen'],
-      house: 'Lannister',
-    },
-    {
-      name: 'Daenarys',
-      spouse: 'Khal Drogo',
-      children: ['Drogon', 'Rhaegal', 'Viserion'],
-      house: 'Targaryen',
-    },
-    {
-      name: 'Mace',
-      spouse: 'Alerie',
-      children: ['Margaery', 'Loras'],
-      house: 'Tyrell',
-    },
-    {
-      name: 'Sansa',
-      spouse: 'Tyrion',
-      house: 'Stark',
-    },
-    {
-      name: 'Jon',
-      spouse: null,
-      house: 'Snow',
-    },
-  ];;
+  const input = dataGameOfThrones;
   const expected = 14;
 
   expect(countNumberOfChildren(input)).toStrictEqual(expected);
@@ -201,4 +203,11 @@ test('extractState', () => {
 
   expect(extractState(data, input)).toStrictEqual(expected);
   expect(extractState(data, input2)).toStrictEqual(expected2);
+});
+
+test('extractChildren', () => {
+  const input = dataGameOfThrones;
+  const expected = ['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras'];
+
+  expect(extractChildren(input)).toStrictEqual(expected);
 });

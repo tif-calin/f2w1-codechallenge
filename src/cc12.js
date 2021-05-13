@@ -1,7 +1,11 @@
-export const toLastNames = people => {
-  return people.map(p => `${p.firstName} ${p.lastName}`);
+export const toLastNames = arr => {
+  return arr.map(p => `${p.firstName} ${p.lastName}`);
 };
 
-export const addValues = arrNums => {
-  return arrNums.reduce((acc, num) => acc + num, 0);
+export const addValues = arr => {
+  return arr.reduce((acc, num) => acc + num, 0);
+};
+
+export const addPurchases = arr => {
+  return arr.reduce((acc, item) => acc + item.purchasePrice, 0);
 };

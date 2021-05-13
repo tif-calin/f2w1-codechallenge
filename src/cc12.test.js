@@ -1,5 +1,5 @@
 import { test, expect } from '@jest/globals';
-import { toLastNames } from './cc12.js';
+import { addValues, toLastNames } from './cc12.js';
 
 /*
 Main:
@@ -16,4 +16,11 @@ test('toLastNames', () => {
   const expected = ['Jane Doe', 'James Bond'];
 
   expect(toLastNames(input)).toStrictEqual(expected);
+});
+
+test('addValues', () => {
+  const input = [4, 3, 2, 1];
+  const expected = 10;
+
+  expect(addValues(input)).toStrictEqual(expected);
 });

@@ -21,3 +21,13 @@ export const isCapitalized = str => {
   const re = new RegExp('[A-Z]');
   return str.split(' ').filter(word => re.test(word[0])).map(word => word.replace(/\W/g, ''));
 };
+
+export const citiesAtoJ = arr => {
+  const re = new RegExp('[A-J]');
+  return arr.filter(word => re.test(word[0]));
+};
+
+export const matchMonth = str => {
+  const re = new RegExp('^[oO].*[tr]$');
+  return re.test(str);
+};

@@ -1,6 +1,6 @@
 // imports
 import { describe, expect, test } from '@jest/globals';
-import { containsW, containsWorld, isCapitalized, isNum, sortByChildren } from './cc13.js';
+import { citiesAtoJ, containsW, containsWorld, isCapitalized, isNum, matchMonth, sortByChildren } from './cc13.js';
 
 // data
 let characters = [
@@ -125,7 +125,7 @@ describe('challenge 2: containsW', () => {
   });
 });
 
-describe('challenge 3: isNum', () => {
+test('challenge 3: isNum', () => {
   expect(isNum(1234567890)).toStrictEqual(true);
   expect(isNum('12345')).toStrictEqual(true);
   expect(isNum('h3llo w0rld')).toStrictEqual(true);
@@ -133,14 +133,33 @@ describe('challenge 3: isNum', () => {
   expect(isNum('')).toStrictEqual(false);
 });
 
-describe('challenge 4: containsWorld', () => {
+test('challenge 4: containsWorld', () => {
   expect(containsWorld('hello world')).toStrictEqual(true);
   expect(containsWorld('Hello World')).toStrictEqual(false);
   expect(containsWorld('hello everyone')).toStrictEqual(false);
 });
 
-describe('challenge 5: isCapitalized', () => {
+test('challenge 5: isCapitalized', () => {
   expect(isCapitalized('We only want to Return the Words that begin With a capital Letter')).toStrictEqual(['We', 'Return', 'Words', 'With', 'Letter']);
   expect(isCapitalized('Given by our hand in the meadow that is called Runnymede, between Windsor and Staines, on the fifteenth day of June in the seventeenth year of our reign (i.e. 1215: the new regnal year began on 28 May).')).toStrictEqual(['Given', 'Runnymede', 'Windsor', 'Staines', 'June', 'May']);
   expect(isCapitalized('these words are all failures')).toStrictEqual([]);
+});
+
+test('challenge 6: citiesAtoJ', () => {
+  expect(citiesAtoJ(['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'])).toStrictEqual(['Cleveland', 'Birmingham', 'Austin', 'Boston', 'Hoboken']);
+  expect(citiesAtoJ(['Albuquerque', 'Chicago', 'Philadelphia', 'Newark', 'Sacramento', 'Eugene'])).toStrictEqual(['Albuquerque', 'Chicago', 'Eugene']);
+  expect(citiesAtoJ([])).toStrictEqual([]);
+});
+
+test('challenge 7: matchMonth', () => {
+  expect(matchMonth('Oct')).toStrictEqual(true);
+  expect(matchMonth('oct')).toStrictEqual(true);
+  expect(matchMonth('October')).toStrictEqual(true);
+  expect(matchMonth('october')).toStrictEqual(true);
+  expect(matchMonth('November')).toStrictEqual(false);
+  expect(matchMonth('nov')).toStrictEqual(false);
+  expect(matchMonth(123)).toStrictEqual(false);
+  expect(matchMonth('octob')).toStrictEqual(false);
+  expect(matchMonth('OCTOBER')).toStrictEqual(false);
+  expect(matchMonth('notOctober')).toStrictEqual(false);
 });

@@ -6,3 +6,8 @@ export const containsW = str => {
   const re = new RegExp('w');
   return re.test(str);
 };
+
+export const isNum = input => {
+  const re = new RegExp('\\d');
+  return re.test(input);
+};

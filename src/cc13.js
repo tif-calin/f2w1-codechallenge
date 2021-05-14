@@ -11,3 +11,8 @@ export const isNum = input => {
   const re = new RegExp('\\d');
   return re.test(input);
 };
+
+export const containsWorld = input => {
+  const re = new RegExp('world');
+  return re.test(input);
+};

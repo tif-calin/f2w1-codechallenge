@@ -1,6 +1,6 @@
 // imports
 import { describe, expect, test } from '@jest/globals';
-import { containsW, isNum, sortByChildren } from './cc13.js';
+import { containsW, containsWorld, isNum, sortByChildren } from './cc13.js';
 
 // data
 let characters = [
@@ -131,4 +131,10 @@ describe('challenge 3: isNum', () => {
   expect(isNum('h3llo w0rld')).toStrictEqual(true);
   expect(isNum('hello world')).toStrictEqual(false);
   expect(isNum('')).toStrictEqual(false);
+});
+
+describe('challenge 4: containsWorld', () => {
+  expect(containsWorld('hello world')).toStrictEqual(true);
+  expect(containsWorld('Hello World')).toStrictEqual(false);
+  expect(containsWorld('hello everyone')).toStrictEqual(false);
 });

@@ -1,6 +1,6 @@
 // imports
 import { describe, expect, test } from '@jest/globals';
-import { containsW, containsWorld, isNum, sortByChildren } from './cc13.js';
+import { containsW, containsWorld, isCapitalized, isNum, sortByChildren } from './cc13.js';
 
 // data
 let characters = [
@@ -137,4 +137,10 @@ describe('challenge 4: containsWorld', () => {
   expect(containsWorld('hello world')).toStrictEqual(true);
   expect(containsWorld('Hello World')).toStrictEqual(false);
   expect(containsWorld('hello everyone')).toStrictEqual(false);
+});
+
+describe('challenge 5: isCapitalized', () => {
+  expect(isCapitalized('We only want to Return the Words that begin With a capital Letter')).toStrictEqual(['We', 'Return', 'Words', 'With', 'Letter']);
+  expect(isCapitalized('Given by our hand in the meadow that is called Runnymede, between Windsor and Staines, on the fifteenth day of June in the seventeenth year of our reign (i.e. 1215: the new regnal year began on 28 May).')).toStrictEqual(['Given', 'Runnymede', 'Windsor', 'Staines', 'June', 'May']);
+  expect(isCapitalized('these words are all failures')).toStrictEqual([]);
 });

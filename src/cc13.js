@@ -16,3 +16,8 @@ export const containsWorld = input => {
   const re = new RegExp('world');
   return re.test(input);
 };
+
+export const isCapitalized = str => {
+  const re = new RegExp('[A-Z]');
+  return str.split(' ').filter(word => re.test(word[0])).map(word => word.replace(/\W/g, ''));
+};

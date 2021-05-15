@@ -31,3 +31,8 @@ export const matchMonth = str => {
   const re = new RegExp('^[oO].*[tr]$');
   return re.test(str);
 };
+
+export const noPunctuation = str => {
+  const re = new RegExp(/\w+\s/g);
+  return [...str.matchAll(re)].map(match => match[0]);
+};

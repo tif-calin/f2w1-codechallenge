@@ -1,6 +1,6 @@
 // imports
 import { describe, expect, test } from '@jest/globals';
-import { citiesAtoJ, containsW, containsWorld, isCapitalized, isNum, matchMonth, sortByChildren } from './cc13.js';
+import { citiesAtoJ, containsW, containsWorld, isCapitalized, isNum, matchMonth, noPunctuation, sortByChildren } from './cc13.js';
 
 // data
 let characters = [
@@ -162,4 +162,9 @@ test('challenge 7: matchMonth', () => {
   expect(matchMonth('octob')).toStrictEqual(false);
   expect(matchMonth('OCTOBER')).toStrictEqual(false);
   expect(matchMonth('notOctober')).toStrictEqual(false);
+});
+
+test('challenge 8: noPunctuation', () => {
+  expect(noPunctuation('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia vel massa sed egestas. Nunc faucibus iaculis elit, a scelerisque enim condimentum sed. Aenean ac scelerisque sem, et pharetra diam.')).toStrictEqual(['Lorem ', 'ipsum ', 'dolor ', 'sit ', 'consectetur ', 'adipiscing ', 'Cras ', 'lacinia ', 'vel ', 'massa ', 'sed ', 'Nunc ', 'faucibus ', 'iaculis ', 'a ', 'scelerisque ', 'enim ', 'condimentum ', 'Aenean ', 'ac ', 'scelerisque ', 'et ', 'pharetra ']);
+  expect(noPunctuation('Given by our hand in the meadow that is called Runnymede, between Windsor and Staines, on the fifteenth day of June in the seventeenth year of our reign (i.e. 1215: the new regnal year began on 28 May).')).toStrictEqual(['Given ', 'by ', 'our ', 'hand ', 'in ', 'the ', 'meadow ', 'that ', 'is ', 'called ', 'between ', 'Windsor ', 'and ', 'on ', 'the ', 'fifteenth ', 'day ', 'of ', 'June ', 'in ', 'the ', 'seventeenth ', 'year ', 'of ', 'our ', 'reign ', 'the ', 'new ', 'regnal ', 'year ', 'began ', 'on ', '28 ']);
 });

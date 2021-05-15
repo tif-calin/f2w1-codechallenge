@@ -1,6 +1,6 @@
 // imports
 import { describe, expect, test } from '@jest/globals';
-import { citiesAtoJ, containsW, containsWorld, hangman, isCapitalized, isNum, matchMonth, noPunctuation, sortByChildren } from './cc13.js';
+import { citiesAtoJ, containsW, containsWorld, findShells, hangman, isCapitalized, isNum, matchMonth, noPunctuation, sortByChildren } from './cc13.js';
 
 // data
 let characters = [
@@ -172,4 +172,10 @@ test('challenge 8: noPunctuation', () => {
 test('challenge 9: hangman', () => {
   expect(hangman('This is a regex challenge. We are trying to create a hangman phrase where all of the vowels are missing!')).toStrictEqual('Th_s _s _ r_g_x ch_ll_ng_. W_ _r_ try_ng t_ cr__t_ _ h_ngm_n phr_s_ wh_r_ _ll _f th_ v_w_ls _r_ m_ss_ng!');
   expect(hangman('I wAnt them all tO bE removed and replaced with Underscores.')).toStrictEqual('_ w_nt th_m _ll t_ b_ r_m_v_d _nd r_pl_c_d w_th _nd_rsc_r_s.');
+});
+
+test('challenge 10: findShells', () => {
+  const seashells = `She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I'm sure she sells seashore shells.`;
+
+  expect(findShells(seashells)).toStrictEqual(['sells', 'seashells', 'shells', 'sells', 'seashells', 'sells', 'shells', 'sells', 'shells']);
 });

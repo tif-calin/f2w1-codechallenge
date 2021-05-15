@@ -40,3 +40,7 @@ export const noPunctuation = str => {
 export const hangman = str => {
   return str.replace(/[aeiou]/gi, '_');
 };
+
+export const findShells = str => {
+  return [...str.matchAll(/s\w*?ells/g)].map(arr => arr[0]);
+};

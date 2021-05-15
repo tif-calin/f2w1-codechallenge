@@ -36,3 +36,7 @@ export const noPunctuation = str => {
   const re = new RegExp(/\w+\s/g);
   return [...str.matchAll(re)].map(match => match[0]);
 };
+
+export const hangman = str => {
+  return str.replace(/[aeiou]/gi, '_');
+};
